@@ -1,3 +1,7 @@
+output "network_manager_ipam_pool_static_cidrs_id" {
+  description = "Map of id values across all network_manager_ipam_pool_static_cidrs, keyed the same as var.network_manager_ipam_pool_static_cidrs"
+  value       = { for k, v in azurerm_network_manager_ipam_pool_static_cidr.network_manager_ipam_pool_static_cidrs : k => v.id }
+}
 output "network_manager_ipam_pool_static_cidrs_address_prefixes" {
   description = "Map of address_prefixes values across all network_manager_ipam_pool_static_cidrs, keyed the same as var.network_manager_ipam_pool_static_cidrs"
   value       = { for k, v in azurerm_network_manager_ipam_pool_static_cidr.network_manager_ipam_pool_static_cidrs : k => v.address_prefixes }
